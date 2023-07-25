@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# gnostr-proxy sub-shell process
+mkdir -p .gnostr
+[ ! -d .gnostr/gnostr-proxy ] && cd .gostr &&  git clone --depth 1 --branch master https://github.com/gnostr-org/gnostr-proxy.git
+[ -d gnostr-proxy ] && git --assume-unchanged gnostr-proxy && cd  gnostr-proxy && make run || cd .gnostr/gnostr-proxy && make run &
+(
+# Inside parentheses, and therefore a subshell . . .
+while [ 1 ]   # Endless loop.
+do
+  #tail -f /tmp/gnostr-proxy.log; \
+  echo "gnostr-proxy".$$; \
+    echo $$ | while read line; \
+  do \
+    ( \
+    echo $line $$ $BASHPID; \
+    ) done; \
+  	( \
+      echo $$; \
+	pnpm install 2>/dev/null && pnpm run dev 2>/dev/null; \
+)>/tmp/gnostr-proxy.log
+
+done
+)2>/tmp/gnostr-proxy.log
