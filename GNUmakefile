@@ -130,7 +130,7 @@ export PNPM_VERSION
 #PACKAGE_INSTALL                         :=add
 #export PACKAGE_INSTALL
 
--:
+-:install
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 ## help
 
@@ -167,7 +167,8 @@ init:initialize venv##	initialize venv
 	done\
 	)
 	@bash -c ". .venv/bin/activate &"
-
+install:## 	install gnostr-proxy /usr/local/bin
+	@mkdir -p /usr/local/bin && install gnostr-proxy /usr/local/bin
 help:## 	verbose help
 	@sed -n 's/^## //p' ${MAKEFILE_LIST} | column -t -s ':' |  sed -e 's/^/ /'
 .ONESHELL:
