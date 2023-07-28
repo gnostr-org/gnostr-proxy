@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "node ace serve --watch",
-    "build": "node ace build --production --ignore-ts-errors",
+    "build": "node ace build --production --ignore-ts-errors && install .env build/ && cd build",
     "start": "node server.js",
+    "start-quiet": "node server.js > /tmp/gnostr-proxy.log 2>&1 &",
+
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write ."
   },
@@ -73,7 +75,8 @@
     "cjs": "0.0.11",
     "node-cron": "^3.0.2",
     "nostr-relaypool": "^0.4.17",
-    "nostr-tools": "^1.4.1",
+    "nostr-tools": "^1.13.1",
+    "nostr-tools@1.4.1": "link:/nostr-tools@1.4.1",
     "pnpm": "^8.6.7",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
