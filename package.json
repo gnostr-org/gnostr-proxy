@@ -7,7 +7,8 @@
     "build": "node ace build --production --ignore-ts-errors",
     "pnpm-build-start": "pnpm exec node ace build --production --ignore-ts-errors && cd build && install ../.env . && pnpm install --production && pnpm exec node server.js",
     "pnpm-build-start-quiet": "pnpm exec node ace build --production --ignore-ts-errors && cd build && install ../.env . && pnpm install --production && pnpm exec node server.js >/tmp/gnostr-proxy.log",
-    "start": "node server.js",
+    "start": "cd build && node server.js",
+    "test": "which pnpm",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write ."
   },
