@@ -82,7 +82,7 @@
     "reflect-metadata": "^0.1.13",
     "sha256": "file:@noble/hashes/sha256",
     "source-map-support": "^0.5.21",
-    "standalone": "link:@adonisjs/core/build/standalone",
+    "standalone": "file:@adonisjs/core/build/standalone",
     "uuid": "^9.0.0",
     "ws": "^8.12.0"
   }
