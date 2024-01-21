@@ -5,7 +5,10 @@ ARG=${1:-}
 help(){
 
   printf "usage:\n"
-  printf "	 gnostr-proxy -h --help help\n"
+  printf "	 gnostr-proxy-relay-list\n"
+  printf "	 gnostr-proxy-relay-list -h --help help\n"
+  printf "	 gnostr-proxy-relay-list -v --version version\n"
+  printf "	 gnostr-proxy-relay-list -t --tag tag tags\n"
 
   printf "logging:\n"
   printf "	tail -f /tmp/gnostr-proxy.log\n"
@@ -33,13 +36,12 @@ then
 fi
 
 RELAYS=$(curl -sS --get http://0.0.0.0:6102 | sed 's/<[^>]*>//g' | sed '/^$/d')
-echo $RELAYS
+#echo $RELAYS
 for relay in $RELAYS;
 do
-if [[ $ARG == "--tag" ]];
+if [[ $ARG == "-t" ]] ||[[ $ARG == "--tag" ]] || [[ $ARG == "tag" ]] ||[[ $ARG == "tags" ]];
 then
 echo  "--tag r $relay"
-
 else
   echo $relay
 fi
