@@ -1,3 +1,8 @@
+#	git update-index --assume-unchanged node_modules/.modules.yaml && \
+#	git update-index --assume-unchanged node_modules/.pnpm/node_modules/isarray && \
+#	git update-index --assume-unchanged node_modules/.pnpm/node_modules/p-map && \
+#	git update-index --assume-unchanged node_modules/.pnpm/node_modules/sprintf-js
+
 APP_KEY
 !*akefile
 **.DS_Store
