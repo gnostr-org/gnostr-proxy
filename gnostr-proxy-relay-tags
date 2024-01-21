@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+ARG=${1:-}
+
+help(){
+
+  printf "usage:\n"
+  printf "	 gnostr-proxy -h --help help\n"
+
+  printf "logging:\n"
+  printf "	tail -f /tmp/gnostr-proxy.log\n"
+  exit;
+}
+if [[ $ARG == "-h" ]];
+then
+	help;exit
+fi
+if [[ $ARG == "--help" ]];
+then
+	help;exit
+fi
+if [[ $ARG == "help" ]];
+then
+	help;exit
+fi
+if [[ $ARG == "-v" ]];
+then
+  printf "v0.0.0"; exit
+fi
+if [[ $ARG == "--version" ]];
+then
+  printf "v0.0.0"; exit
+fi
+
+curl -sS --get http://0.0.0.0:6102 | sed 's/<[^>]*>//g' | sed '/^$/d'
