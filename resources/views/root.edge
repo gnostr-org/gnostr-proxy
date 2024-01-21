@@ -4,10 +4,8 @@
 
 </head>
 <body>
-  <br>
 @each(relay in relays.filter(relay => relay.connected))
-["r", "{{ relay.url }}"], <br>
+{{ relay.url }} <br>
 @end
-["r", "wss://relay.damus.io"] <br>
 </body>
 </html>
