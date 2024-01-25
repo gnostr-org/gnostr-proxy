@@ -31,7 +31,6 @@ jobs:
       ## notice: these are post checkout steps
       - run: make
       - run: make help
-      - run: make docker-start
       - run: make report
       - run: make submodules
       - run: make initialize
