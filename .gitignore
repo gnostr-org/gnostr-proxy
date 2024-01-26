@@ -3,6 +3,10 @@
 #	git update-index --assume-unchanged node_modules/.pnpm/node_modules/p-map && \
 #	git update-index --assume-unchanged node_modules/.pnpm/node_modules/sprintf-js
 
+.gnostr/gnostr.relays
+relays
+
+PROCESS
 APP_KEY
 !*akefile
 **.DS_Store

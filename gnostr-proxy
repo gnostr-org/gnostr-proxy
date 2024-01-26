@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+PROCESS=$$
+
+echo $$ > PROCESS
+TERM=xterm
+
 ARG=${1:-}
 
 help(){
