@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 PROCESS=$$
-
 echo $$ > PROCESS
+
 TERM=xterm
 
 ARG=${1:-}
@@ -37,9 +37,43 @@ then
   printf "v0.0.0"; exit
 fi
 
+## var=$CI
+## if [[ -z "$var" ]]; then
+##     echo "var=$var; CI=$CI"
+## fi
+## [[ -z "$var" ]]; echo "var=$var;"
+## ## [[ -z "$CI" ]]; echo "CI=$CI"
 
 gnostr-set-relays 2>/tmp/gnostr-proxy.log || echo
-(echo `pwd`) & clear && \
+
+## CI=test
+## echo 48:CI=test
+
+## if [[   -z $CI ]];
+##   then
+##     echo "-z CI=$CI"
+## fi
+## if [[ ! -z $CI ]];
+##   then
+##     echo "! -z CI=$CI"
+## fi
+
+##CI=""
+## echo 54:CI=\"\"
+
+## if [[   -z "$CI" ]];
+##   then
+##     echo "-z CI=$CI"
+## fi
+## if [[ ! -z "$CI" ]];
+##   then
+##     echo "! -z CI=$CI"
+## fi
+
+if [[ -z "$CI" ]];
+  then
+    (echo `pwd`) & clear
+fi
 # gnostr-proxy sub-shell process
 #
 #
