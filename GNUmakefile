@@ -173,6 +173,7 @@ help:## 	verbose help
 	@sed -n 's/^## //p' ${MAKEFILE_LIST} | column -t -s ':' |  sed -e 's/^/ /'
 .ONESHELL:
 env:
+	git update-index --assume-unchanged public/assets/entrypoints.json public/assets/manifest.json
 	@echo -e "PORT=6102"                                 >.env
 	@echo -e "HOST=0.0.0.0"                             >>.env
 	@echo -e "NODE_ENV=development"                     >>.env
