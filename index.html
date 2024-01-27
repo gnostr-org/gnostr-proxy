@@ -1,0 +1,73 @@
+<h1 id="nostr-proxy">Nostr Proxy</h1>
+<p>Push and get events to your Proxy, get results from multiple Nostr
+relays</p>
+<h2 id="installation">Installation</h2>
+<p>In the project directory, run:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pnpm</span> install</span></code></pre></div>
+<p>Edit your env variables. You can use a <code>.env</code> file by
+copying the file <code>.env.example</code> in the root directory, or you
+can set your variables into your hosting provider UI.<br />
+For <code>APP_KEY</code>, you can use the following command to generate
+one <code>node ace generate:key</code></p>
+<pre><code>PORT=3333
+HOST=0.0.0.0
+NODE_ENV=development
+APP_KEY=unique-key
+DRIVE_DISK=local
+SESSION_DRIVER=cookie
+CACHE_VIEWS=false
+PROXY_URL=wss://your-proxy.com
+RELAYS=wss://relay1.com,wss://relay2.com,wss://relay.com</code></pre>
+<h2 id="launch">Launch</h2>
+<h3 id="development">Development</h3>
+<p><code>npm run dev</code> to start the app in dev mode.<br />
+Open <a href="http://localhost:3333">http://localhost:3333</a> to view
+it in the browser.<br />
+Use <code>ws://localhost:3333</code> into your Nostr client.</p>
+<h3 id="production">Production</h3>
+<pre><code>npm run build
+cd build
+pnpm install --prod
+node server.js</code></pre>
+<h3 id="running-tests">Running tests</h3>
+<p>TODO</p>
+<h2 id="known-issues">Known issues</h2>
+<ul>
+<li>None?</li>
+</ul>
+<h2 id="learn-more">Learn More</h2>
+<p>To learn Fastify, check out the <a
+href="https://www.fastify.io/docs/latest/">Fastify
+documentation</a>.</p>
+<p>===</p>
+<p><img
+src="https://raw.githubusercontent.com/wiki/nektos/act/img/logo-150.png" /></p>
+<h3 id="act-in-act-like-docker-in-docker">“act in act” like “docker in
+docker”</h3>
+<ol type="1">
+<li><p><a href="https://github.com/nektos/act#installation">Install act
+CI</a></p>
+<p>$<code>curl -s https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash</code></p></li>
+<li><p>Install <code>make</code></p>
+<p>$<code>brew install make</code> or
+$<code>apt install make</code></p></li>
+<li><p>clone repo</p>
+<p>$<code>git clone https://github.com/RandyMcMillan/nuke-docker.git</code></p>
+<p>$<code>cd nuke-docker</code></p></li>
+<li><p>$<code>make</code></p></li>
+</ol>
+<p><img src="./make.png" /></p>
+<ol start="5" type="1">
+<li>$<code>make push</code></li>
+</ol>
+<p>https://github.com/RandyMcMillan/nuke-docker/assets/152159/dac1cdef-bec4-4b76-8f2d-c304de680b44</p>
+<hr />
+<h3 id="act-example">act example</h3>
+<pre><code>act -v   -W .github/workflows/push.yml
+act -vr  -W .github/workflows/push.yml
+act -vrb -W .github/workflows/push.yml</code></pre>
+<p>======= - <a href="https://github.com/nostr-protocol/nostr">Nostr</a>
+- <a href="https://github.com/aljazceru/awesome-nostr">Awesome
+Nostr</a></p>
+<h2 id="license">License</h2>
+<p>This project is MIT licensed.</p>
