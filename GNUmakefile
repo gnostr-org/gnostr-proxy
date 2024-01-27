@@ -323,6 +323,8 @@ tag:
 	@git tag $(OS)-$(OS_VERSION)-$(ARCH)-$(shell date +%s)
 	@git push -f --tags || echo "unable to push tags..."
 
+curl-test:
+	curl --connect-timeout 20 http://localhost:6102 | sed  's/<[^>]*>//g'
 
 test-curl:
 	@gnostr --sec $(shell gnostr-sha256) \
