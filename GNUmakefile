@@ -323,8 +323,10 @@ tag:
 	@git tag $(OS)-$(OS_VERSION)-$(ARCH)-$(shell date +%s)
 	@git push -f --tags || echo "unable to push tags..."
 
+curl-test:
+	curl --connect-timeout 20 http://localhost:6102 | sed  's/<[^>]*>//g'
 
-test-curl:
+gnostr-query-test:
 	@gnostr --sec $(shell gnostr-sha256) \
     --envelope \
     --content \
@@ -333,7 +335,7 @@ test-query:
 	@gnostr-query \
     -t gnostr \
     -t weeble \
-    -t wobble | gnostr-cat -u ws://127.0.0.1:6102
+    -t wobble | gnostr-cat ws://127.0.0.1:6102
 
 -include Makefile
 -include venv.mk
