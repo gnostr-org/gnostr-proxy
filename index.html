@@ -1,73 +1,247 @@
-<h1 id="nostr-proxy">Nostr Proxy</h1>
-<p>Push and get events to your Proxy, get results from multiple Nostr
-relays</p>
-<h2 id="installation">Installation</h2>
-<p>In the project directory, run:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pnpm</span> install</span></code></pre></div>
-<p>Edit your env variables. You can use a <code>.env</code> file by
-copying the file <code>.env.example</code> in the root directory, or you
-can set your variables into your hosting provider UI.<br />
-For <code>APP_KEY</code>, you can use the following command to generate
-one <code>node ace generate:key</code></p>
-<pre><code>PORT=3333
-HOST=0.0.0.0
-NODE_ENV=development
-APP_KEY=unique-key
-DRIVE_DISK=local
-SESSION_DRIVER=cookie
-CACHE_VIEWS=false
-PROXY_URL=wss://your-proxy.com
-RELAYS=wss://relay1.com,wss://relay2.com,wss://relay.com</code></pre>
-<h2 id="launch">Launch</h2>
-<h3 id="development">Development</h3>
-<p><code>npm run dev</code> to start the app in dev mode.<br />
-Open <a href="http://localhost:3333">http://localhost:3333</a> to view
-it in the browser.<br />
-Use <code>ws://localhost:3333</code> into your Nostr client.</p>
-<h3 id="production">Production</h3>
-<pre><code>npm run build
-cd build
-pnpm install --prod
-node server.js</code></pre>
-<h3 id="running-tests">Running tests</h3>
-<p>TODO</p>
-<h2 id="known-issues">Known issues</h2>
-<ul>
-<li>None?</li>
-</ul>
-<h2 id="learn-more">Learn More</h2>
-<p>To learn Fastify, check out the <a
-href="https://www.fastify.io/docs/latest/">Fastify
-documentation</a>.</p>
-<p>===</p>
-<p><img
-src="https://raw.githubusercontent.com/wiki/nektos/act/img/logo-150.png" /></p>
-<h3 id="act-in-act-like-docker-in-docker">“act in act” like “docker in
-docker”</h3>
-<ol type="1">
-<li><p><a href="https://github.com/nektos/act#installation">Install act
-CI</a></p>
-<p>$<code>curl -s https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash</code></p></li>
-<li><p>Install <code>make</code></p>
-<p>$<code>brew install make</code> or
-$<code>apt install make</code></p></li>
-<li><p>clone repo</p>
-<p>$<code>git clone https://github.com/RandyMcMillan/nuke-docker.git</code></p>
-<p>$<code>cd nuke-docker</code></p></li>
-<li><p>$<code>make</code></p></li>
-</ol>
-<p><img src="./make.png" /></p>
-<ol start="5" type="1">
-<li>$<code>make push</code></li>
-</ol>
-<p>https://github.com/RandyMcMillan/nuke-docker/assets/152159/dac1cdef-bec4-4b76-8f2d-c304de680b44</p>
-<hr />
-<h3 id="act-example">act example</h3>
-<pre><code>act -v   -W .github/workflows/push.yml
-act -vr  -W .github/workflows/push.yml
-act -vrb -W .github/workflows/push.yml</code></pre>
-<p>======= - <a href="https://github.com/nostr-protocol/nostr">Nostr</a>
-- <a href="https://github.com/aljazceru/awesome-nostr">Awesome
-Nostr</a></p>
-<h2 id="license">License</h2>
-<p>This project is MIT licensed.</p>
+<!DOCTYPE html><html lang="en"><head><title></title><link rel="stylesheet" href="http://localhost:49388/assets/app.css" />
+<script src="http://localhost:49388/assets/app.js" defer></script>
+
+</head>
+<body>
+wss://adult.18plus.social <br>
+wss://africa.nostr.joburg <br>
+wss://anonymousgreen.com/nostrclient/api/v1/relay <br>
+wss://arc1.arcadelabs.co <br>
+wss://at.nostrworks.com <br>
+wss://atlas.nostr.land <br>
+wss://bitcoiner.social <br>
+wss://bitcoinmaximalists.online <br>
+wss://bitstack.app <br>
+wss://blastr.f7z.xyz <br>
+wss://booger.pro <br>
+wss://btc-italia.online <br>
+wss://ca.orangepill.dev <br>
+wss://ca.relayable.org <br>
+wss://dave.st.germa.in/nostr <br>
+wss://deschooling.us <br>
+wss://dev.nostrplayground.com <br>
+wss://e.nos.lol <br>
+wss://eden.nostr.land <br>
+wss://feeds.nostr.band/nostrhispano <br>
+wss://filter.stealth.wine/npub18kzz4lkdtc5n729kvfunxuz287uvu9f64ywhjz43ra482t2y5sks0mx5sz?broadcast=true <br>
+wss://freerelay.xyz <br>
+wss://freespeech.casa <br>
+wss://global-relay.cesc.trade <br>
+wss://ithurtswhenip.ee <br>
+wss://jp-relay-nostr.invr.chat <br>
+wss://knostr.neutrine.com <br>
+wss://la.relayable.org <br>
+wss://ln.weedstr.net/nostrrelay/weedstr <br>
+wss://mastodon.cloud/api/v1/streaming <br>
+wss://multiplextr.coracle.social <br>
+wss://n.wingu.se <br>
+wss://nerostr.xmr.rocks <br>
+wss://nos.lol <br>
+wss://nostr-01.yakihonne.com <br>
+wss://nostr-02.dorafactory.org <br>
+wss://nostr-1.nbo.angani.co <br>
+wss://nostr-pub.wellorder.net <br>
+wss://nostr-relay.app <br>
+wss://nostr-relay.bitcoin.ninja <br>
+wss://nostr-relay.derekross.me <br>
+wss://nostr-relay.nokotaro.com <br>
+wss://nostr-relay.schnitzel.world <br>
+wss://nostr-relay.texashedge.xyz <br>
+wss://nostr-rs-relay.cryptoassetssubledger.com <br>
+wss://nostr-tbd.website <br>
+wss://nostr-usa.ka1gbeoa21bnm.us-west-2.cs.amazonlightsail.com <br>
+wss://nostr-verif.slothy.win <br>
+wss://nostr-verified.wellorder.net <br>
+wss://nostr.1f52b.xyz <br>
+wss://nostr.1sat.org <br>
+wss://nostr.256k1.dev <br>
+wss://nostr.438b.net <br>
+wss://nostr.688.org <br>
+wss://nostr.asdf.mx <br>
+wss://nostr.bch.ninja <br>
+wss://nostr.bitcoiner.social <br>
+wss://nostr.bitcoinplebs.de <br>
+wss://nostr.blockpower.capital <br>
+wss://nostr.bolt.fun <br>
+wss://nostr.btc-library.com <br>
+wss://nostr.carlostkd.ch <br>
+wss://nostr.cercatrova.me <br>
+wss://nostr.ch3n2k.com <br>
+wss://nostr.cheeserobot.org <br>
+wss://nostr.cizmar.net <br>
+wss://nostr.cruncher.com <br>
+wss://nostr.dakukitsune.ca <br>
+wss://nostr.danvergara.com <br>
+wss://nostr.data.haus <br>
+wss://nostr.debancariser.com <br>
+wss://nostr.decentony.com <br>
+wss://nostr.dogdogback.com <br>
+wss://nostr.dvdt.dev <br>
+wss://nostr.easify.de <br>
+wss://nostr.easydns.ca <br>
+wss://nostr.einundzwanzig.space <br>
+wss://nostr.filmweb.pl <br>
+wss://nostr.fmar.link <br>
+wss://nostr.fmt.wiz.biz <br>
+wss://nostr.gleeze.com <br>
+wss://nostr.gruntwerk.org <br>
+wss://nostr.hekster.org <br>
+wss://nostr.hifish.org <br>
+wss://nostr.impervious.live <br>
+wss://nostr.ingwie.me <br>
+wss://nostr.inosta.cc <br>
+wss://nostr.koning-degraaf.nl <br>
+wss://nostr.l00p.org <br>
+wss://nostr.localhost.re <br>
+wss://nostr.lorentz.is <br>
+wss://nostr.lu.ke <br>
+wss://nostr.malin.onl <br>
+wss://nostr.massmux.com <br>
+wss://nostr.maximacitadel.org <br>
+wss://nostr.metamadeenah.com <br>
+wss://nostr.middling.mydns.jp <br>
+wss://nostr.mikedilger.com <br>
+wss://nostr.mining.sc <br>
+wss://nostr.mom <br>
+wss://nostr.mutinywallet.com <br>
+wss://nostr.naut.social <br>
+wss://nostr.nodeofsven.com <br>
+wss://nostr.noones.com <br>
+wss://nostr.openhoofd.nl <br>
+wss://nostr.orangepill.dev <br>
+wss://nostr.pjv.me <br>
+wss://nostr.plebchain.org <br>
+wss://nostr.portemonero.com <br>
+wss://nostr.primz.org <br>
+wss://nostr.reelnetwork.eu <br>
+wss://nostr.rocket-tech.net <br>
+wss://nostr.rocketnode.space <br>
+wss://nostr.roundrockbitcoiners.com <br>
+wss://nostr.schorsch.fans <br>
+wss://nostr.sethforprivacy.com <br>
+wss://nostr.shawnyeager.net <br>
+wss://nostr.sidnlabs.nl <br>
+wss://nostr.slothy.win <br>
+wss://nostr.sovbit.host <br>
+wss://nostr.strits.dk <br>
+wss://nostr.swiss-enigma.ch <br>
+wss://nostr.thank.eu <br>
+wss://nostr.thesamecat.io <br>
+wss://nostr.tools.global.id <br>
+wss://nostr.topeth.info <br>
+wss://nostr.uthark.com <br>
+wss://nostr.vulpem.com <br>
+wss://nostr.wine <br>
+wss://nostr.xmr.rocks <br>
+wss://nostr.zbd.gg <br>
+wss://nostr.zenon.info <br>
+wss://nostr.zkid.social <br>
+wss://nostr01.vida.dev <br>
+wss://nostr3.actn.io <br>
+wss://nostrelay.yeghro.site <br>
+wss://nostrich.friendship.tw <br>
+wss://nostril.cam <br>
+wss://nostrja-kari-nip50.heguro.com <br>
+wss://nostrja-kari.heguro.com <br>
+wss://nostrja-world-relays-test.heguro.com <br>
+wss://nostrools.nostr1.com <br>
+wss://nostrsatva.net <br>
+wss://nostrua.com <br>
+wss://nostrue.com <br>
+wss://nproxy.kristapsk.lv <br>
+wss://nrelay.c-stellar.net <br>
+wss://offchain.pub <br>
+wss://paid.no.str.cr <br>
+wss://paid.nostr.lc <br>
+wss://paid.nostrified.org <br>
+wss://pleb.cloud <br>
+wss://powrelay.xyz <br>
+wss://private.red.gb.net <br>
+wss://purplepag.es <br>
+wss://r.v0l.io <br>
+wss://ragnar-relay.com <br>
+wss://relay-pub.deschooling.us <br>
+wss://relay-verified.deschooling.us <br>
+wss://relay.0xchat.com <br>
+wss://relay.beta.fogtype.com <br>
+wss://relay.bitcoinpark.com <br>
+wss://relay.chicagoplebs.com <br>
+wss://relay.cryptocculture.com <br>
+wss://relay.damus.io <br>
+wss://relay.danvergara.com <br>
+wss://relay.deezy.io <br>
+wss://relay.devstr.org <br>
+wss://relay.dwadziesciajeden.pl <br>
+wss://relay.f7z.io <br>
+wss://relay.farscapian.com <br>
+wss://relay.getalby.com/v1 <br>
+wss://relay.hamnet.io <br>
+wss://relay.hodl.ar <br>
+wss://relay.house <br>
+wss://relay.johnnyasantos.com <br>
+wss://relay.kisiel.net.pl <br>
+wss://relay.layer.systems <br>
+wss://relay.lexingtonbitcoin.org <br>
+wss://relay.mostr.pub <br>
+wss://relay.n057r.club <br>
+wss://relay.nostr.band <br>
+wss://relay.nostr.com.au <br>
+wss://relay.nostr.directory <br>
+wss://relay.nostr.hach.re <br>
+wss://relay.nostr.nu <br>
+wss://relay.nostr.ro <br>
+wss://relay.nostr.sc <br>
+wss://relay.nostr.vet <br>
+wss://relay.nostr.wirednet.jp <br>
+wss://relay.nostr.youlot.org <br>
+wss://relay.nostrati.com <br>
+wss://relay.nostrcheck.me <br>
+wss://relay.nostrcn.com <br>
+wss://relay.nostriches.org <br>
+wss://relay.nostrid.com <br>
+wss://relay.nostrified.org <br>
+wss://relay.nostrology.org <br>
+wss://relay.nostromo.social <br>
+wss://relay.nostrplebs.com <br>
+wss://relay.nostrss.re <br>
+wss://relay.nostrview.com <br>
+wss://relay.nsecbunker.com <br>
+wss://relay.oldcity-bitcoiners.info <br>
+wss://relay.orange-crush.com <br>
+wss://relay.orangepill.dev <br>
+wss://relay.primal.net <br>
+wss://relay.reeve.cn <br>
+wss://relay.rip <br>
+wss://relay.roli.social <br>
+wss://relay.s3x.social <br>
+wss://relay.sendstr.com <br>
+wss://relay.shitforce.one <br>
+wss://relay.snort.social <br>
+wss://relay.sovereign-stack.org <br>
+wss://relay.stoner.com <br>
+wss://relay.stpaulinternet.net <br>
+wss://relay.toastr.space <br>
+wss://relay.vanderwarker.family <br>
+wss://relay.wavlake.com <br>
+wss://relay.wellorder.net <br>
+wss://relay1.nostrchat.io <br>
+wss://relay2.nostr.vet <br>
+wss://relayable.org <br>
+wss://rly.nostrkid.com <br>
+wss://rss.nos.social <br>
+wss://rsslay.ch3n2k.com <br>
+wss://ryan.nostr1.com <br>
+wss://sats.lnaddy.com/nostrclient/api/v1/relay <br>
+wss://search.nos.today <br>
+wss://stealth.wine <br>
+wss://test.nostr.lc <br>
+wss://therelayofallrelays.nostr1.com <br>
+wss://tmp-relay.cesc.trade <br>
+wss://wc1.current.ninja <br>
+wss://welcome.nostr.wine <br>
+wss://xmr.usenostr.org <br>
+wss://yabu.me <br>
+wss://yestr.me <br>
+wss://zee-relay.fly.dev <br>
+</body>
+</html>
