@@ -35,7 +35,7 @@ then
   printf "v0.0.0"; exit
 fi
 
-RELAYS=$(curl -sS --get http://0.0.0.0:6102 | sed 's/<[^>]*>//g' | sed '/^$/d')
+RELAYS=$(curl -sS --get http://localhost:6102 | sed 's/<[^>]*>//g' | sed '/^$/d')
 #echo $RELAYS
 for relay in $RELAYS;
 do
