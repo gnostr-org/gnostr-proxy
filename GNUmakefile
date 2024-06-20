@@ -313,8 +313,14 @@ success:
 .ONESHELL:
 nvm: ## 	nvm
 	@echo "$(NODE_VERSION)" > .nvmrc
-	@curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash || git pull -C $(HOME)/.nvm && export NVM_DIR="$(HOME)/.nvm" && [ -s "$(NVM_DIR)/nvm.sh" ] && \. "$(NVM_DIR)/nvm.sh" && [ -s "$(NVM_DIR)/bash_completion" ] && \. "$(NVM_DIR)/bash_completion"  && nvm install $(NODE_VERSION) && nvm use $(NODE_VERSION)
-	@source ~/.bashrc && nvm alias $(NODE_ALIAS) $(NODE_VERSION) &
+	@curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+	@git -C $(HOME)/.nvm reset --hard
+	@git -C $(HOME)/.nvm checkout master && git -C $(HOME)/.nvm pull --no-rebase
+	@echo NVM_DIR=$(NVM_DIR)
+	@echo NODE_VERSION=$(NODE_VERSION)
+	@echo NODE_ALIAS=$(NODE_ALIAS)
+	export NVM_DIR="$(HOME)/.nvm" && [ -s "$(NVM_DIR)/nvm.sh" ] && \. $(NVM_DIR)/nvm.sh && [ -s "$(NVM_DIR)/bash_completion" ] && \. $(NVM_DIR)/bash_completion #&& #nvm install $(NODE_VERSION) && nvm use $(NODE_VERSION)
+	.  "$(NVM_DIR)/nvm.sh" && nvm install $(NODE_VERSION) && nvm alias $(NODE_ALIAS) $(NODE_VERSION)
 
 nvm-clean: ## 	nvm-clean
 	@rm -rf ~/.nvm
