@@ -214,6 +214,8 @@ report:## 	report
 	@echo ''
 	@echo '[ENV VARIABLES]	'
 	@echo ''
+	@echo 'HOME=${HOME}'
+	@echo ''
 	@echo 'TIME=${TIME}'
 	@echo 'BASENAME=${BASENAME}'
 	@echo 'PROJECT_NAME=${PROJECT_NAME}'
