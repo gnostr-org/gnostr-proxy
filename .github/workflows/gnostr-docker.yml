@@ -45,4 +45,5 @@ jobs:
       - run: make
       - run: make nvm
       - run: make install
-      - run: make run
+      - run: ./gnostr-proxy > relays & cat relays
+      - run: wait 10000 && pkill -P $(cat PROCESS) || true
