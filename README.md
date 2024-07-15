@@ -1,5 +1,21 @@
-# Nostr Proxy
+# gostr-proxy
+
 Push and get events to your Proxy, get results from multiple Nostr relays
+
+### Quick Install:
+
+```
+curl https://raw.githubusercontent.com/gnostr-org/gnostr-proxy/master/gnostr-proxy | bash
+```
+
+or
+
+```
+make run
+```
+
+<hr>
+
 
 ## Installation
 
