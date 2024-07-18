@@ -187,16 +187,17 @@ env:
 	@git update-index --assume-unchanged APP_KEY
 #@cat .env > .env.example
 .PHONY:pnpm
-pnpm:nvm
+pnpm: nvm
 	@$(shell echo node ace generate:key) | sed 's/>.*//' > APP_KEY && cat APP_KEY
 	@curl -fsSL https://get.pnpm.io/install.sh | sh - || echo "pnpm install script failed"
-	@npm i --global yarn  --force || which yarn || echo "yarn not found"
-	@npm i --global pnpm  --force || which pnpm || echo "pnpm not found"
+	@npm i --global yarn  --force && which yarn || echo "yarn not found"
+	@npm i --global pnpm  --force && which pnpm || echo "pnpm not found"
+	exec bash
 	@pnpm install reflect-metadata || echo "pnpm install reflect-metadata failed"
 	@pnpm install pino-pretty || echo "pnpm install pino-pretty failed"
 	@pnpm install @adonisjs/core/build/standalone || echo "pnpm install @adonisjs/core/build/standalone failed..."
 
-run:pnpm env## 	gnostr-proxy
+run: pnpm env## 	gnostr-proxy
 	@pnpm install && pnpm run dev #&
 run-dev:run## 	run-dev
 run-production:## 	run-production
@@ -312,15 +313,11 @@ success:
 .PHONY: nvm
 .ONESHELL:
 nvm: ## 	nvm
-	@echo "$(NODE_VERSION)" > .nvmrc
-	@curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-	@git -C $(HOME)/.nvm reset --hard
-	@git -C $(HOME)/.nvm checkout master && git -C $(HOME)/.nvm pull --no-rebase
-	@echo NVM_DIR=$(NVM_DIR)
-	@echo NODE_VERSION=$(NODE_VERSION)
-	@echo NODE_ALIAS=$(NODE_ALIAS)
-	export NVM_DIR="$(HOME)/.nvm" && [ -s "$(NVM_DIR)/nvm.sh" ] && \. $(NVM_DIR)/nvm.sh && [ -s "$(NVM_DIR)/bash_completion" ] && \. $(NVM_DIR)/bash_completion #&& #nvm install $(NODE_VERSION) && nvm use $(NODE_VERSION)
-	.  "$(NVM_DIR)/nvm.sh" && nvm install $(NODE_VERSION) && nvm alias $(NODE_ALIAS) $(NODE_VERSION)
+	@echo "$(NODE_VERSION)" > .nvmrc && \
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash || \
+git -C $(HOME)/.nvm reset --hard
+	@git -C $(HOME)/.nvm checkout master && git -C $(HOME)/.nvm pull --no-rebase --force 2>/dev/null
+	@echo . $(HOME)/.nvm/nvm.sh &>/dev/null
 
 nvm-clean: ## 	nvm-clean
 	@rm -rf ~/.nvm
