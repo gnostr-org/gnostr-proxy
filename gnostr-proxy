@@ -1,8 +1,61 @@
 #!/usr/bin/env bash
 
+ARG=${1:-}
+
+help(){
+
+  printf "usage:\n"
+  printf "      gnostr-proxy -h --help help\n"
+
+  printf "context:\n"
+  printf "        gnostr --sec    <secret_hash>  --content \"nostr event content\" | gnostr-post-event \$(gnostr-proxy --uri)\n"
+  printf "        gnostr --sec \$(gnostr-sha256) --content \"nostr event content\" | gnostr-post-event \$(gnostr-proxy --uri)\n"
+  printf "logging:\n"
+  printf "     tail -f /tmp/gnostr-proxy.log\n"
+  exit;
+}
+
+uri(){
+
+  printf "ws://0.0.0.0:6102"
+  exit;
+}
+
+if [[ $ARG == "--uri" ]];
+then
+	uri;
+fi
+if [[ $ARG == "-h" ]];
+then
+	help;exit
+fi
+if [[ $ARG == "--help" ]];
+then
+	help;exit
+fi
+if [[ $ARG == "help" ]];
+then
+	help;exit
+fi
+if [[ $ARG == "-v" ]];
+then
+  printf "v0.0.0"; exit
+fi
+if [[ $ARG == "--version" ]];
+then
+  printf "v0.0.0"; exit
+fi
+
+
+
+if [[ $1 == "-h" ]]
+then
+help;
+fi
+
 #. $HOME/.nvm/nvm.sh && type -P nvm || exec bash && . $HOME/.nvm/nvm.sh
 
-type -P node || echo -e "node not in $PATH\nTrying to install..."; type -P apt-get && apt-get install node || type -P brew && brew install node || echo "install node"
+type -P node &>/dev/null || echo -e "node not in $PATH\nTrying to install..."; type -P apt-get && apt-get install node || type -P brew &>/dev/null && brew install node || echo "install node"
 { # this ensures the entire script is downloaded #
 
 nvm_has() {
@@ -486,38 +539,6 @@ PROCESS=$$
 echo $$ > PROCESS
 
 TERM=xterm
-
-ARG=${1:-}
-
-help(){
-
-  printf "usage:\n"
-  printf "	 gnostr-proxy -h --help help\n"
-
-  printf "logging:\n"
-  printf "	tail -f /tmp/gnostr-proxy.log\n"
-  exit;
-}
-if [[ $ARG == "-h" ]];
-then
-	help;exit
-fi
-if [[ $ARG == "--help" ]];
-then
-	help;exit
-fi
-if [[ $ARG == "help" ]];
-then
-	help;exit
-fi
-if [[ $ARG == "-v" ]];
-then
-  printf "v0.0.0"; exit
-fi
-if [[ $ARG == "--version" ]];
-then
-  printf "v0.0.0"; exit
-fi
 
 ## var=$CI
 ## if [[ -z "$var" ]]; then
