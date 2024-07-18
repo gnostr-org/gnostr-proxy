@@ -39,11 +39,11 @@ then
 fi
 if [[ $ARG == "-v" ]];
 then
-  printf "v0.0.8"; exit
+  printf "v0.0.9"; exit
 fi
 if [[ $ARG == "--version" ]];
 then
-  printf "v0.0.8"; exit
+  printf "v0.0.9"; exit
 fi
 
 

@@ -1,6 +1,6 @@
 {
   "name": "gnostr-proxy",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "private": true,
   "scripts": {
     "gnostr-proxy": "install ./gnostr-proxy /usr/local/bin/ && gnostr-proxy",
