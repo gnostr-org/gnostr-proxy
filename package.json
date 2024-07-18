@@ -3,6 +3,7 @@
   "version": "0.0.8",
   "private": true,
   "scripts": {
+    "gnostr-proxy": "install ./gnostr-proxy /usr/local/bin/ && gnostr-proxy",
     "dev": "node ace serve --watch",
     "build": "node ace build --production --ignore-ts-errors",
     "pnpm-build-start": "pnpm exec node ace build --production --ignore-ts-errors && cd build && install ../.env . && pnpm install --production && pnpm exec node server.js",
